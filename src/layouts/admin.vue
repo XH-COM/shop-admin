@@ -10,6 +10,7 @@
       <el-main>
         <f-tag-list/>
         <router-view v-slot="{Component}">
+          <!-- transition  只能有 一个根节点-->
           <transition name="fade">  <!--  过渡动画  -->
           <!--  动态组件  缓存-->
           <keep-alive :max="10">

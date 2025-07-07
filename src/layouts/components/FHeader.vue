@@ -96,7 +96,7 @@
 
 <script setup>
 import {useCookies} from '@vueuse/integrations/useCookies'// useCookies
-import FormDrawer from "~/layouts/components/FormDrawer.vue";
+import FormDrawer from "~/components/FormDrawer.vue";
 import {ElMessage, ElMessageBox} from 'element-plus' //确认消息提示框
 import {showModal, toast} from "~/composables/util.js";
 import {logout, updatePassword} from "~/api/manager.js";

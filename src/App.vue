@@ -27,6 +27,9 @@
 <!---->
 
 <style >
+body{
+  @apply bg-gray-100;
+}
 #nprogress  .bar{
   background: #f3c40f!important;
   height: 4px;
