@@ -1,33 +1,33 @@
 <template>
   <div>
-<!--    <h1> &#45;&#45;后台首页&#45;&#45; </h1>-->
+    <!--    <h1> &#45;&#45;后台首页&#45;&#45; </h1>-->
     <!--    <el-button @click="set">设置</el-button>-->
     <!--    <el-button @click="get">读取</el-button>-->
     <!--    <el-button @click="remove">删除</el-button>-->
     <el-row :gutter="20">
       <template v-if="panels.length == 0">   <!--  当 panels 数组长度为 0 时显示 -->
         <!-- 骨架屏  一个大致的模板 加载时-->
-      <el-col :span="6" :offset="0" v-for=" i in 4">
-        <el-skeleton style="width: 100%" animated loading>  <!--  加载时的动画效果  -->
-          <template #template>
+        <el-col :span="6" :offset="0" v-for=" i in 4">
+          <el-skeleton style="width: 100%" animated loading>  <!--  加载时的动画效果  -->
+            <template #template>
 
-            <el-card shadow="hover" class="border-0">
-              <template #header>
-                <div class="flex justify-between">
+              <el-card shadow="hover" class="border-0">
+                <template #header>
+                  <div class="flex justify-between">
+                    <el-skeleton-item variant="text" style="width: 50%" />
+                    <el-skeleton-item variant="text" style="width: 10%" />
+                  </div>
+                </template>
+                <el-skeleton-item variant="h3" style="width: 80%" />
+                <el-divider />
+                <div class="flex justify-between text-sm text-gray-500">
                   <el-skeleton-item variant="text" style="width: 50%" />
                   <el-skeleton-item variant="text" style="width: 10%" />
                 </div>
-              </template>
-              <el-skeleton-item variant="h3" style="width: 80%" />
-              <el-divider />
-              <div class="flex justify-between text-sm text-gray-500">
-                <el-skeleton-item variant="text" style="width: 50%" />
-                <el-skeleton-item variant="text" style="width: 10%" />
-              </div>
-            </el-card>
-          </template>
-        </el-skeleton>
-      </el-col>
+              </el-card>
+            </template>
+          </el-skeleton>
+        </el-col>
       </template>
 
       <el-col :span="6" :offset="0" v-for="(item,index) in panels" :key="index">
@@ -59,15 +59,31 @@
 
       </el-col>
     </el-row>
+
+    <index-navs/>
+    <!--左右布局-->
+    <el-row :gutter="20">
+      <el-col :span="12" :offset="0">
+        <index-chart/>
+      </el-col>
+
+      <el-col :span="12" :offset="0">
+        <index-card title="店铺及商品提示" tip="店铺商品的提示"/>
+      </el-col>
+
+    </el-row>
   </div>
 
-<!--  {{ $store.state.user.username }}-->
+  <!--  {{ $store.state.user.username }}-->
   <!--  <el-button @click="HandleLogout">退出登录</el-button>-->
 </template>
 
 
 <script setup>
 import  CountTo from "~/components/CountTo.vue"
+import IndexNavs from "~/components/IndexNavs.vue"
+import IndexChart from "~/components/IndexChart.vue"
+import IndexCard from "~/components/IndexCard.vue"
 
 import {ref} from "vue";
 import {
@@ -81,12 +97,6 @@ getStatistics1().then((resp) => {
   panels.value = resp.panels; // 赋值给 panels
   console.log(panels.value)
 
-}).finally(() => {
-  // 确保骨架屏至少显示800ms
-  setTimeout(() => {
-    loading.value = false
-  }, 800);
-  console.log("getStatistics1-finally")
 })
 // import {useCookies} from '@vueuse/integrations/useCookies'// useCookies
 // import {ElMessage, ElMessageBox} from 'element-plus' //确认消息提示框
