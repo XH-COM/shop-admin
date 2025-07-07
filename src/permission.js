@@ -8,6 +8,10 @@ import {
     showFUllLoading,
     hideFUllLoading
 } from "~/composables/util.js";
+
+
+//全局前置守卫
+let hasGetInfo = false; //防止重复性的加载getInfo
 // GOOD
 router.beforeEach(async (to, from, next) => {
     //显示loading
@@ -28,8 +32,9 @@ router.beforeEach(async (to, from, next) => {
 
     //如果用户登陆了，自动获取用户信息，并存储在veux中
     let hasNewRoutes = false
-    if (token) {
+    if (token && !hasGetInfo) {
         let {menus}=await store.dispatch("getInfo")
+        hasGetInfo=true;  //只有一遍 getInfo
         //动态添加路由
        hasNewRoutes= addRoutes(menus)
     }
