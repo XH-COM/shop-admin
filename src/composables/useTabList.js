@@ -102,6 +102,8 @@ export function useTabList() {
                 title: '后台首页',
                 path: "/"
             }]
+            // 手动触发路由跳转 不会自动跳转 删除全部的时候
+            router.push("/");
         } else if (c == "clearOther") {
             // 过滤只剩下首页和当前激活
             tabList.value = tabList.value.filter(tab => tab.path == "/" || tab.path == activeTab.value)
