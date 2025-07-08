@@ -43,9 +43,7 @@
         <!--        <span class="el-dropdown-link">-->
         <span class="flex items-center text-black-50">
       <el-avatar :size="25" :src="$store.state.user.avatar"></el-avatar>
-<!--         <el-avatar :size="25" src="src/1.png"></el-avatar>-->
         {{ $store.state.user.username }}
-
       <el-icon class="el-icon--right">
         <arrow-down/>
       </el-icon>
