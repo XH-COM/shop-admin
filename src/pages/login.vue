@@ -100,6 +100,7 @@ const onSubmit = () => { //提交
     store.dispatch("login", form).then(resp => {
       //登录成功提示
       toast("登录成功",'success')
+      console.log("头像------------")
       //跳转到后台首页
       router.push('/')
     }).finally(() => {
