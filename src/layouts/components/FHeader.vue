@@ -267,7 +267,6 @@ const handleRefresh = () => location.reload()
 .f-header {
   @apply flex items-center bg-rose-200 text-black-100 fixed top-0 left-0 right-0;
   height: 64px;
-  z-index: 1000; /* 添加或修改 z-index 值，确保足够高 */
 }
 
 .logo {

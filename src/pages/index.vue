@@ -62,14 +62,13 @@
 
     <index-navs/>
     <!--左右布局-->
-    <el-row :gutter="20" class="mt-5">
+    <el-row :gutter="20">
       <el-col :span="12" :offset="0">
-        <index-chart v-permission="['getStatistics3,GET']"/>   <!--有查看图表的权限-->
+        <index-chart/>
       </el-col>
 
       <el-col :span="12" :offset="0">
-        <index-card title="店铺及商品提示" tip="店铺商品的提示" :btns="goods"  class="mb-3"/>
-        <index-card title="交易提示" tip="需要立即处理的交易订单" :btns="order"/>
+        <index-card title="店铺及商品提示" tip="店铺商品的提示"/>
       </el-col>
 
     </el-row>
@@ -88,9 +87,7 @@ import IndexCard from "~/components/IndexCard.vue"
 
 import {ref} from "vue";
 import {
-  getStatistics1,
-    getStatistics2,
-    getStatistics3
+  getStatistics1
 } from "~/api/index.js";
 
 const panels = ref([])
@@ -101,13 +98,6 @@ getStatistics1().then((resp) => {
   console.log(panels.value)
 
 })
-const goods = ref([])
-const order = ref([])
-getStatistics2().then(resp=>{
-  goods.value = resp.goods
-  order.value = resp.order
-})
-
 // import {useCookies} from '@vueuse/integrations/useCookies'// useCookies
 // import {ElMessage, ElMessageBox} from 'element-plus' //确认消息提示框
 // import {showModal, toast} from "~/composables/util.js";

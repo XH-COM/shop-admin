@@ -25,8 +25,4 @@ import  "nprogress/nprogress.css"  //显示全屏loading   进度条
 app.use(store)
 app.use(ElementPlus)
 app.use(router)
-
-import permission from "~/directives/permission.js"
-app.use(permission)
-
 app.mount('#app')
