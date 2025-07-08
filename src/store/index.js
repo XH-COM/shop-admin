@@ -59,7 +59,7 @@ const store = createStore({
                     // store.commit("SET_USERINFO", info)
                     commit("SET_USERINFO", resp)
                     commit("SET_MENUS", resp.menus)
-                    commit("SET_RULENAMES", resp.ruleNames)
+                    commit("SET_RULENAMES", resp.ruleNames)  //用户拥有的权限
                     console.log(resp)
                     // console.log(info)
                     resolve(resp)

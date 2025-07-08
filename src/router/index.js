@@ -15,7 +15,7 @@ import OrderList from '~/pages/order/list.vue'
 import CommentList from '~/pages/comment/list.vue'
 import ImageList from '~/pages/image/list.vue'
 import NoticeList from '~/pages/notice/list.vue'
-import SettingList from '~/pages/setting/list.vue'
+import SettingBase from '~/pages/setting/base.vue'
 import CouponList from '~/pages/coupon/list.vue'
 
 
@@ -104,9 +104,9 @@ const asyncRoutes = [
             title:'优惠列表'
         }
     },{
-        path:'/Setting/list',
-        name:'/Setting/list',
-        component: SettingList,
+        path:'/setting/base',
+        name:'/setting/base',
+        component: SettingBase,
         meta:{
             title:'设置列表'
         }
