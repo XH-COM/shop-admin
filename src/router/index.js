@@ -10,14 +10,6 @@ import Login from "~/pages/login.vue";
 import Admin from "~/layouts/admin.vue";
 import GoodsList from '~/pages/goods/list.vue'
 import CategoryList from '~/pages/category/list.vue'
-import  UserList from '~/pages/user/list.vue'
-import OrderList from '~/pages/order/list.vue'
-import CommentList from '~/pages/comment/list.vue'
-import ImageList from '~/pages/image/list.vue'
-import NoticeList from '~/pages/notice/list.vue'
-import SettingList from '~/pages/setting/list.vue'
-import CouponList from '~/pages/coupon/list.vue'
-
 
 //默认路由，所有用户共享
 const routes = [
@@ -60,55 +52,6 @@ const asyncRoutes = [
         component: CategoryList,
         meta:{
             title:'分类列表'
-        }
-    },{
-        path:'/user/list',
-        name:'/user/list',
-        component: UserList,
-        meta:{
-            title:'用户列表'
-        }
-    },{
-        path:'/order/list',
-        name:'/order/list',
-        component: OrderList,
-        meta:{
-            title:'订单列表'
-        }
-    },{
-        path:'/comment/list',
-        name:'/comment/list',
-        component: CommentList,
-        meta:{
-            title:'评论列表'
-        }
-    },{
-        path:'/image/list',
-        name:'/image/list',
-        component: ImageList,
-        meta:{
-            title:'图片列表'
-        }
-    },{
-        path:'/notice/list',
-        name:'/notice/list',
-        component: NoticeList,
-        meta:{
-            title:'通知列表'
-        }
-    },{
-        path:'/coupon/list',
-        name:'/coupon/list',
-        component: CouponList,
-        meta:{
-            title:'优惠列表'
-        }
-    },{
-        path:'/Setting/list',
-        name:'/Setting/list',
-        component: SettingList,
-        meta:{
-            title:'设置列表'
         }
     }
 
