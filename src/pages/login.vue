@@ -3,24 +3,28 @@
   <!--  <title> 登陆界面</title>-->
   <!--  <h1> this is login in Page</h1>-->
   <!--  <el-row style="min-height:100vh;" class="bg-rose-100">-->
-  <el-row class="login-continer">    <!-- 抽离class -->
-    <el-col :lg="16" :md="12" class="flex items-center justify-center flex-col">
+  <el-row class="login-container">    <!-- 抽离class -->
+<!--    <el-col :lg="16" :md="12" class="flex items-center justify-center flex-col">-->
+    <el-col :lg="16" :md="12" class="left">
       <div>
         <div class="frot-bold text-5xl text-light-100 mb-4 ">欢迎登录</div>
         <div class="text-gray-400,text-4xl">此站点是登陆界面</div>
       </div>
     </el-col>
-    <!--    <el-col C class=" bg-teal-50 flex items-center justify-center flex-col ">-->
-    <el-col :lg="16" :md="12" class="left">
 
-      <h2>欢迎回来</h2>
+    <!--    <el-col C class=" bg-teal-50 flex items-center justify-center flex-col ">-->
+<!--    <el-col :lg="16" :md="12" class="left">-->
+    <el-col :lg="8" :md="12" class="right">
+<!--      <h2>欢迎回来</h2>-->
+      <h2 class="title">欢迎回来</h2>
       <!--      <div class="flex items-center justify-center my-5 text-stone-300 space-x-2">-->
-      <div class="right">
+<!--      <div class="right">-->
+      <div>
         <!--        <span class="h-[1px] w-16 bg-stone-300"></span>-->
-        <span></span>
+        <span class="line"></span>
 
         <span>账号密码登录</span>
-        <span></span>
+        <span class="line"></span>
       </div>
 
 
@@ -125,25 +129,54 @@ onBeforeUnmount(() => {
 
 </script>
 
-<style>
-.login-continer {
+
+<style scoped>
+.login-container{
   @apply min-h-screen bg-rose-100;
 }
-
-.left {
-  @apply bg-teal-50 flex items-center justify-center flex-col;
+.login-container .left,.login-container .right{
+  @apply flex items-center justify-center;
 }
-
-.right {
-  @apply flex items-center justify-center my-5 text-stone-300 space-x-2;
+.login-container .right{
+  @apply bg-light-50 flex-col;
 }
-
-.right > span:first-child, .right > span:last-child {
-  @apply h-[1px] w-16 bg-stone-300;
+.left>div>div:first-child{
+  @apply font-bold text-5xl text-light-50 mb-4;
 }
-
-
+.left>div>div:last-child{
+  @apply text-black-200 text-sm;
+}
+.right .title{
+  @apply font-bold text-3xl text-black-100;
+}
+.right>div{
+  @apply flex items-center justify-center my-5 text-gray-300 space-x-2;
+}
+.right .line{
+  @apply h-[1px] w-16 bg-gray-200;
+}
 </style>
+
+<!--<style>-->
+<!--.login-container {-->
+<!--  @apply min-h-screen bg-rose-100;-->
+<!--}-->
+
+<!--.left {-->
+<!--  @apply bg-teal-50 flex items-center justify-center flex-col;-->
+<!--}-->
+
+<!--.right {-->
+<!--  @apply flex items-center justify-center my-5 text-stone-300 space-x-2;-->
+<!--}-->
+
+<!--.right > span:first-child, .right > span:last-child {-->
+<!--  @apply h-[1px] w-16 bg-stone-300;-->
+<!--}-->
+
+
+
+<!--</style>-->
 
 <!--//.btn{-->
 <!--//  display: block;-->
